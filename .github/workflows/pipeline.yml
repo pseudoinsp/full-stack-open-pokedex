@@ -34,6 +34,7 @@ jobs:
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          if: ${{ github.event_name == 'push' }}
           heroku_app_name: "vast-springs-64637"
           heroku_email: "gonosztaviszorny@gmail.com"
           healthcheck: "https://vast-springs-64637.herokuapp.com/health"
