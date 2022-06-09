@@ -33,6 +33,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "vast-springs-64637"
           heroku_email: "gonosztaviszorny@gmail.com"
-          healthcheck: "https://https://vast-springs-64637.herokuapp.com/health"
+          healthcheck: "https://vast-springs-64637.herokuapp.com/health"
           checkstring: "ok"
+          rollbackonhealthcheckfailed: true
       
