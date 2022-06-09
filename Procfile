@@ -1,1 +1,1 @@
-web: npm run start-prodohno
+web: npm run start-prod
