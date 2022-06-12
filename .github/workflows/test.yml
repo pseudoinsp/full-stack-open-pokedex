@@ -29,6 +29,7 @@ jobs:
           SKIP: ${{ contains(env.PARTS, '#skip') }}
         run: |
           if [ $SKIP ]
+          then
             echo "skipped"
           else 
             echo "not skipped" 
