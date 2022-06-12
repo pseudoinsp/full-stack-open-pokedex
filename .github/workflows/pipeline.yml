@@ -64,6 +64,7 @@ jobs:
     runs-on: ubuntu-20.04 
     steps:
       - uses: rjstone/discord-webhook-notify@v1
+      #  not working, always true
         if: ${{ !failure() && !cancelled() && success() }}
         with:
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
