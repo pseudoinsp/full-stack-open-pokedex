@@ -27,5 +27,10 @@ jobs:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
           PARTS: ${{ join(env.COMMIT_MESSAGES, ' ') }}
           SKIP: ${{ contains(env.PARTS, '#skip') }}
-        run: if [ $SKIP ] echo "skipped" else echo "not skipped" fi
+        run: |
+          if [ $SKIP ]
+            echo "skipped"
+          else 
+            echo "not skipped" 
+          fi
         
