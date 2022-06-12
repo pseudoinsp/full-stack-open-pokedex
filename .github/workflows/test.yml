@@ -25,6 +25,6 @@ jobs:
       - name: contains skip
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
-          PARTS: ${{ join($COMMIT_MESSAGES, ' ') }}
-          SKIP: ${{ contains($PARTS, '#skip') }}
+          PARTS: ${{ join(env.COMMIT_MESSAGES, ' ') }}
+          SKIP: ${{ contains(env.PARTS, '#skip') }}
         run: echo "$COMMIT_MESSAGES"
