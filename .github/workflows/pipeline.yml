@@ -70,7 +70,7 @@ jobs:
           severity: info
           details: Build passed.
       - uses: rjstone/discord-webhook-notify@v1
-        if: ${{ failure() }}
+        if: ${{ failure() || cancelled() }}
         with:
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
           severity: error
