@@ -1,0 +1,16 @@
+name: Discord test
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  discord_job:
+    runs-on: ubuntu-20.04 
+    steps:
+      - uses: rjstone/discord-webhook-notify@v1
+        with:
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          severity: info
+          details: Good message
